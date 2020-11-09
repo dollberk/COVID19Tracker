@@ -10,9 +10,27 @@ from folium.plugins import HeatMap
 
 app = Flask(__name__)
 
+app.secret_key = 'Veritas'
+
+@app.route('/')
+def display_intro():
+    return render_template('index.html')
+
+@app.route('/emergency_symptoms')
+def display_emergency_symptoms():
+    return render_template('emergency_symptoms.html')
+
+@app.route('/exposure')
+def display_exposure():
+    return render_template('exposure.html')
+
+@app.route('/view_survey_results')
+def display_survey_results():
+    return render_template('view_survey_results.html')
 
 @app.route('/drawMap')
 def draw_map():
+
     map_data = pd.read_csv("./Data/data_01.csv", sep=';')
     lat = map_data['LATITUDE'].mean()
     lon = map_data['LONGITUDE'].mean()
@@ -32,3 +50,4 @@ def draw_map():
     hmap.save(os.path.join('./templates', 'heatmap.html'))
     # Render the heatmap
     return render_template('heatmap.html')
+
