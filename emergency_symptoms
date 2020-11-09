@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>NEW JERSEY COVID-19 SYMPTOM TRACKER</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div class="title_info">
+        <h2>Are you experiencing any of the following?</h2>
+        <h3>(Check all that apply)</h3>
+        </div>
+
+        <div class="checkbox_form">
+             <input type="checkbox" id="breathing" name="breathing" value="0">
+             <label for="breathing">Extreme difficulty breathing</label><br>
+             <input type="checkbox" id="blue" name="blue" value="0">
+             <label for="blue">Blue-colored lips or face</label><br>
+             <input type="checkbox" id="chest" name="chest" value="0">
+             <label for="chest">Severe pain or pressure in the chest</label><br>
+             <input type="checkbox" id="dizziness" name="dizziness" value="0">
+             <label for="dizziness">Sever constant dizziness or light-headeness</label><br>
+             <input type="checkbox" id="confused" name="confused" value="0">
+             <label for="confused">Acting confused</label><br>
+             <input type="checkbox" id="speech" name="speech" value="0">
+             <label for="speech">Slurred speech</label><br>
+             <input type="checkbox" id="seizures" name="seizures" value="0">
+             <label for="seizures">Seizures</label><br>
+        </div>
+
+            <a href="{{ url_for('display_intro') }}">Back</a>
+            <a href="{{ url_for('display_exposure') }}">Next</a>
+
+
+    </body>
+
+</html>
